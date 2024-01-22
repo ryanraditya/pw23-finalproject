@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="x-icon/image" href="gambar/Logo_djp.svg.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!--bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <title>Tables Pajak</title>
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+        
+    <!-- Custom styles for this template -->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+</head>
+
+ <!--Navbar-->
+ <nav class="navbar navbar-expand-lg navbar-light bg-secondary ">
+    <div class="container">
+      <a class="navbar-brand" href="dashboardx.html">
+        <img src="gambar/pajak3.png" alt="Logo Pajak" width="50" height="50">
+      </a>
+      <a class="navbar-brand" href="dashboardx.html">Pajak</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="dashboardx.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="tables.html">Tabel</a>
+          </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--Navbar end-->
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <form class="form-inline">
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                    
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">User</span>
+                                <img class="img-profile rounded-circle"
+                                    src="gambar/cirociro.jpg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+                    <p class="mb-4">Selamat datang di halaman kami yang memberikan informasi terkini mengenai pajak. Di sini, Anda dapat menemukan tabel pajak untuk melihat data-data anda.</p>
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">DataTables</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>No Registrasi Kendaraan</th>
+                                            <th>Jenis Kendaraan</th>
+                                            <th>No Rangka</th>
+                                            <th>Harga Pembelian</th>
+                                            <th>Alamat Kendaraan</th>
+                                            <th>Nama Pemilik</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>No Registrasi Kendaraan</th>
+                                            <th>Jenis Kendaraan</th>
+                                            <th>No Rangka</th>
+                                            <th>Harga Pembelian</th>
+                                            <th>Alamat Kendaraan</th>
+                                            <th>Nama Pemilik</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>B 2143 ZZ</td>
+                                            <td>Sepeda Motor</td>
+                                            <td>RE1LO21234YT90855</td>
+                                            <td>Rp.21.000.000</td>
+                                            <td>Kp.Swadaya RT8 RW5</td>
+                                            <td>Septi</td>
+                                        </tr>
+                                        <tr>
+                                            <td>F 1020 UY</td>
+                                            <td>Sepeda Motor</td>
+                                            <td>MH1JT76589YT12456</td>
+                                            <td>Rp.12.000.000</td>
+                                            <td>Kp.Casablanca RT12 RW8</td>
+                                            <td>Yusuf Gimbal</td>
+                                        </tr>
+                                        <tr>
+                                            <td>F 8867 AD</td>
+                                            <td>Mobil</td>
+                                            <td>JHMCM56683C402221</td>
+                                            <td>Rp.128.000.000</td>
+                                            <td>Kp.Rewja RT1 RW1</td>
+                                            <td>Yanto</td>
+                                        </tr>
+                                        <tr>
+                                            <td>F 2341 IO</td>
+                                            <td>Mobil</td>
+                                            <td>1HGCM82633A000123</td>
+                                            <td>Rp.256.000.000</td>
+                                            <td>Kp.Cariu RT6 RW2</td>
+                                            <td>Farhan</td>
+                                        </tr>
+                                        <tr>
+                                            <td>B 5521 OP</td>
+                                            <td>Sepeda Motor</td>
+                                            <td>JYACE16C000012345</td>
+                                            <td>Rp.34.000.000</td>
+                                            <td>Kp.FastFurious RT4 RW1</td>
+                                            <td>Dom</td>
+                                        </tr>
+                                        <tr>
+                                            <td>F 7821 NS</td>
+                                            <td>Sepeda Motor</td>
+                                            <td>ZDM1RB5T05B000123</td>
+                                            <td>Rp.78.000.000</td>
+                                            <td>Kp.Naroseng RT2 RW2</td>
+                                            <td>Andrew</td>
+                                        </tr>
+                                        <tr>
+                                            <td>A 2111 RT</td>
+                                            <td>Mobil</td>
+                                            <td>JUASD56123C402133</td>
+                                            <td>Rp.152.000.000</td>
+                                            <td>Kp.Gongbir RT9 RW9</td>
+                                            <td>Atep</td>
+                                        </tr>
+                                        <tr>
+                                            <td>B 1234 QW</td>
+                                            <td>Sepeda Motor</td>
+                                            <td>ML9PT12765OP56182</td>
+                                            <td>Rp.34.000.000</td>
+                                            <td>Kp.Subang RT2 RW2</td>
+                                            <td>Rido</td>
+                                        </tr>
+                                        <tr>
+                                            <td>F 9763 BC</td>
+                                            <td>Mobil</td>
+                                            <td>MQ1KJ91524LL01672</td>
+                                            <td>Rp.432.000.000</td>
+                                            <td>Kp.Narogeng RT6 RW2</td>
+                                            <td>Luthfi</td>
+                                        </tr>
+                                        <tr>
+                                            <td>B 7123 AS</td>
+                                            <td>Sepeda Motor</td>
+                                            <td>QW1AT12478OW98632</td>
+                                            <td>Rp.19.000.000</td>
+                                            <td>Kp.Cibicew RT13 RW4</td>
+                                            <td>Tatang</td>
+                                        </tr>
+                                        <tr>
+                                            <td>A 4577 PP</td>
+                                            <td>Mobil</td>
+                                            <td>KOWAD98671D981021</td>
+                                            <td>Rp.189.000.000</td>
+                                            <td>Kp.Victoria RT5 RW2</td>
+                                            <td>Aldino</td>
+                                        </tr>
+                                        <tr>
+                                            <td>B 9432 OI</td>
+                                            <td>Mobil</td>
+                                            <td>PASWQ07621l876421</td>
+                                            <td>Rp.211.000.000</td>
+                                            <td>Kp.Cigombong RT9 RW7</td>
+                                            <td>Faqih</td>
+                                        </tr>
+                                        <tr>
+                                            <td>D 3212 GD</td>
+                                            <td>Sepeda Motor</td>
+                                            <td>WQ1JT23345LL98256</td>
+                                            <td>Rp.123.000.000</td>
+                                            <td>Kp.Hungaria RT2 RW2</td>
+                                            <td>Ryan</td>
+                                        </tr>
+                                        <tr>
+                                            <td>F 8211 OO</td>
+                                            <td>Sepeda Motor</td>
+                                            <td>LS3PP09277SS66221</td>
+                                            <td>Rp.34.000.000</td>
+                                            <td>Kp.Koniciwa RT5 RW5</td>
+                                            <td>Debra</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+             <!--footer starts-->
+        <div class="bg-secondary d-flex justify-content-evenly text-center pt-3 pb-5">
+            <div class="ms-5 gap-2  d-flex flex-column ">
+            <h6>SOSIAL MEDIA</h6>
+            <a href="https://www.instagram.com/sttterpadunf/" class="link-dark text-decoration-none"><i class="bi bi-instagram text-dark"></i> Instagram</a>
+            <a href="https://www.linkedin.com/school/sttnf/" class="link-dark text-decoration-none"><i
+                class="bi bi-linkedin text-dark"></i> Linkedin</a>
+            <a href="https://www.facebook.com/STTTerpaduNF?mibextid=ZbWKwL" class="link-dark text-decoration-none"><i
+                class="bi bi-facebook text-dark"></i>
+                Facebook</a>
+            <a href="https://www.youtube.com/@STTNF" class="link-dark text-decoration-none"><i
+                class="bi bi-youtube text-dark"></i> Youtube</a>
+            </div>
+            <div class="ms-5 gap-2  d-flex flex-column">
+            <h6>CONTACT</h6>
+            <div>
+                <a href="https://maps.app.goo.gl/sg93TgUi8xMZReqb9"><i class="bi bi-geo-alt-fill text-dark"></i></a>
+                <p class="text-dark">Kampus A : Jl. Situ Indah 116, Tugu, Cimanggis <br>Depok, Jawa Barat.
+                Kampus B: Jl. Raya Lenteng Agung <br> No.20-21, RT.4/RW.1, Srengseng Sawah, Kec. Jagakarsa, <br> Jakarta
+                Selatan,</p>
+            </div>
+            <div>
+                <a href=""><i class="bi bi-telephone-fill text-dark"></i></a>
+                <p class="text-dark">0484938439489</p>
+            </div>
+            <div>
+                <a href="#"><i class="bi bi-envelope-fill text-dark"></i></a>
+                <p class="text-dark">pajak@gmail.com</p>
+            </div>
+            </div>
+        </div>
+        <!--footer end-->
+        <!--copyright start-->
+        <div class="list-unstyled d-flex justify-content-center shadow-sm p-3 mb-3 bg-body rounded text-primary">
+            <strong>copyright <i class="bi bi-c-circle"></i></strong>
+            <P>Kelompok 5 2023 STT NF</P>
+        </div>
+        <!--copyright end-->
+
+                </div>
+                <!-- End of Content Wrapper -->
+
+            </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

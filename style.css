@@ -1,0 +1,59 @@
+.img1 {
+    box-shadow: 1px 1px 10px black;
+    padding: 1px;
+    border-radius: 1rem;
+}
+
+.poto2 {
+    text-align: center;
+}
+.card{
+    box-shadow: 0.5px 0.5px 5px black;
+    padding: 1px;
+    border-radius: 1rem;
+}
+
+/*css kalkulator*/
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    background:#e8e6f0;
+    margin-bottom: 20px;
+    margin-top: -50px;
+    box-shadow: 0.5px 0.5px 5px black;
+    margin-top: 15px;
+    margin-bottom: 50px;
+}
+
+legend {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+}
+input,select,textarea{
+    border-radius: 10px;
+    box-shadow: 0.5px 0.5px 5px black;
+}
+.tombol{
+    margin-top: 10px;
+    border-radius: 50px;
+    box-shadow: 0.5px 0.5px 5px black;
+    margin-top: 20px;
+}
+.tombol:hover{
+    background:#becccb;
+}
+
+
+
